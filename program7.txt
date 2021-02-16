@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <string.h>
+
+struct emp { //user defined data type
+
+char id[10];
+char name[20]; //struct data type
+char phno[10];
+};
+
+int main()
+
+{
+
+struct emp employees[3];
+
+char sid[10],sname[20],sphno[10]; int flag=0; int sindex=0;
+
+printf("Enter 3 employee records id, name and phno \n");//create
+
+for (int i = 0; i < 3; i++) {
+
+scanf("%s",employees[i].id);
+scanf("%s",employees[i].name);
+scanf("%s",employees[i].phno);
+
+}
+
+for (int i = 0; i < 3; i++) { //read
+
+printf("%s\t",employees[i].id);
+printf("%s\t",employees[i].name);
+printf("%s\n",employees[i].phno);
+
+}
+
+printf("Enter employe id to update \n"); //update
+scanf("%s",sid);
+
+for (int i = 0; i < 3; i++) {
+if(strcmp(sid,employees[i].id) == 0)
+
+{
+
+flag=1; sindex = i;
+
+printf("Enter new id, name and phno ");
+scanf("%s",sid);
+scanf("%s",sname);
+scanf("%s",sphno);
+strcpy(employees[i].id,sid);
+strcpy(employees[i].name,sname);
+strcpy(employees[i].phno,sphno);
+break;
+
+}
+
+}
+
+if(flag==1)
+
+{
+printf("Employee updated \n");
+
+}
+
+else
+
+printf("Employee with id %s not found \n",sid);
+
+printf("Enter employee id to delete \n");//delete
+scanf("%s",sid);
+
+for (int i = 0; i < 3; i++) {
+if(strcmp(sid,employees[i].id) == 0)
+
+{
+
+strcpy(employees[i].id,"");
+strcpy(employees[i].name,"");
+strcpy(employees[i].phno,"");
+break;
+
+}
+}
+printf("*********Employees List*******\n");
+
+for (int i = 0; i < 3; i++)
+
+{
+
+printf("%s\t",employees[i].id);
+printf("%s\t",employees[i].name);
+printf("%s\n",employees[i].phno);
+
+}
+
+return 0;
+
+}
