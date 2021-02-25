@@ -16,7 +16,7 @@ int main()
     }
     for(i=0;i<3;i++)
     {
-        printf("%d %s %s",obj2[i].empid\n,obj2[i].empname \n,obj2[i].empcmpny);
+        printf("%d %s %s",obj2[i].empid   ,obj2[i].empname   ,obj2[i].empcmpny);
     }
     fclose(fp);
 }
