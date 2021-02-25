@@ -12,7 +12,7 @@ int main()
   FILE *fp;
   fp=fopen("employeedb","rb");
   printf("enter employee id to search");
-  scanf("%d", &id)
+  scanf("%d", &id);
     while(employeedb!=NULL)
     {
       for(i=0;i<3;i++)
