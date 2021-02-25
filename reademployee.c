@@ -9,7 +9,7 @@ struct employee obj2[10];
 int main()
 {   int i;
     FILE *fp;
-    fopen("employeedb","rb");
+    fp=fopen("employeedb","rb");
     for(i=0;i<3;i++)
     {
     fread(&obj2[i],sizeof(obj2),1,fp);
