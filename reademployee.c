@@ -5,17 +5,18 @@ struct employee
     char empname[20];
     char empcmpny[20];
 }obj1[10];
+struct employee obj2[10];
 int main()
 {   int i;
     FILE *fp;
     fopen("employeedb","rb");
     for(i=0;i<3;i++)
     {
-    fread(&obj1[i],sizeof(obj1),1,fp);
+    fread(&obj2[i],sizeof(obj2),1,fp);
     }
     for(i=0;i<3;i++)
     {
-        printf("%d",obj1[i]);
+        printf("%d %s %s",obj2[i].empid,obj2[i].empname,obj2[i].empcmpny);
     }
     fclose(fp);
 }
