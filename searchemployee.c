@@ -13,7 +13,8 @@ int main()
   fp=fopen("employeedb","rb");
   printf("enter employee id to search");
   scanf("%d", &id);
-    while(employeedb!=NULL)
+    //while(employeedb!=NULL)
+    while((fread(&obj2[i],sizeof(obj2),1,fp) ==1))
     {
       for(i=0;i<3;i++)
       {
