@@ -1,0 +1,125 @@
+// stack example with pointers
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+    {
+        int data;
+        struct node *link; // self refrential structured 
+    };
+    struct node *first=NULL;
+    int data1;
+    int item;
+    struct node *temp,*tmp;
+int main()
+{ 
+    int n;
+    while(1)
+    { 
+        printf("Select your choice\n");
+        printf("1.Insert beg\n2.Insert End\n3.Insert at Position\n4.Del first\n5.Delete last\n6.Delete at position\n7.print\n8.printpos\n9.exit\n");
+        scanf("%d",&n);
+         
+        switch(n)
+        {
+            case 1:
+            insertbeg();
+            break;
+            case 2:
+            insertend();
+            break;
+            case 3: 
+            //insertend();
+            break;
+            //insertpos();
+            break;
+            case 4:
+            //delbeg();
+            break;
+            case 5:
+           // dellas();
+            break;
+            case 6:
+            //delpos();
+            break;
+            case 7:
+            print();
+            break;
+            case 8:
+            //printpos();
+            break;
+            case 9:
+            exit(0);
+            break;
+        
+        }
+    return 0;
+        
+    }
+    
+}
+int insertbeg()
+{
+    if(first==NULL)
+    {
+        first=(struct node*)malloc(sizeof(struct node*));
+        printf("Enter data for the node\n");
+        scanf("%d ",&data1);
+        first->data=data1;
+        first->link=NULL;
+    }
+    else
+    {
+        temp=(struct node*)malloc(sizeof(struct node*));
+        printf("Enter data for the node\n");
+        scanf("%d ",&data1);
+        temp->data=data1;
+        temp->link=first;
+        first=temp;
+    }
+    return 0;
+
+}
+void print()
+{
+    if(first == NULL)
+    {
+        printf("List is empty");
+    }
+    else
+    {
+        temp =first;
+        while(temp !=NULL)
+        {
+            printf("[%d %u]\t",temp->data,temp->link);
+            temp=temp->link;
+        }
+    }
+}
+void insertend()
+{    struct node *temp,*l1;
+    //struct node *l1,*tmp;
+    l1=(struct node *)malloc(sizeof(struct node));
+    temp=first;
+    while(temp->link!=NULL)
+    {
+        temp=temp->link;
+    }
+    
+    temp->link=l1;
+    l1->link=NULL;
+    printf("enter the data:\n");
+    scanf("%d",&item);
+    l1->data=item;
+    
+}
+
+delend()
+{
+	Struct node *temp1;
+	temp1=first;
+	while(temp1->link!=NULL)
+	{
+		temp1=temp1->link;
+	}
+	
+
